@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "target": "es2019",
+      "sourceMap": true,
+      "lib": ["es2019", "DOM"],
+      "rootDirs": ["./"],
+      "outDir": "./",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "paths": {}
+    },
+    "exclude": ["node_modules"],
+    "include": ["**/*"],
+    "typeRoots": [ "node_modules/@types", "node_modules/function/@types" ]
+  }

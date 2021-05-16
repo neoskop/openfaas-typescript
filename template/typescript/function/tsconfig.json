@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "rootDirs": ["./"],
+      "outDir": "./",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "paths": {},
+      "lib": ["es2020", "DOM"],
+      "module": "commonjs",
+      "target": "es2020"
+    },
+    "exclude": ["node_modules"],
+    "include": ["**/*"],
+    "types": [ "node" ],
+    "typeRoots": [ "node_modules/@types" ]
+  }
+  
