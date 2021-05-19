@@ -1,9 +1,8 @@
 {
-  "watch": ["./"],
+  "watch": [ "**/*"],
   "ext": "json,ts",
   "signal": "SIGINT",
-  "ignore": ["src/**/*.spec.ts"],
   "execMap": {
-    "ts": "node -r tsconfig-paths/register -r ts-node/register"
+    "ts": "npm --prefix ./function i && node --inspect=0.0.0.0 -r ts-node/register index.ts"
   }
 }

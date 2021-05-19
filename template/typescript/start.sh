@@ -1,5 +1,5 @@
 if [ "$DEBUG" = "true" ]; then
-    nodemon --inspect=0.0.0.0 index.ts
+    nodemon index.ts
 else
     node .
 fi
