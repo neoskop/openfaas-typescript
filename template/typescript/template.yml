@@ -1,5 +1,5 @@
 language: node16
-fprocess: ./start.sh
+fprocess: bash ./start.sh
 welcome_message: |
   You have created a new function which uses Node.js 16 (LTS) and the OpenFaaS
   of-watchdog which gives greater control over HTTP responses.

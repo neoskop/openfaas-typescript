@@ -52,7 +52,7 @@ RUN test "$(jq '.scripts | has("test")' package.json)" = "false" || npm test
 WORKDIR /home/app/
 
 ENV cgi_headers="true"
-ENV fprocess="./start.sh"
+ENV fprocess="bash ./start.sh"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
