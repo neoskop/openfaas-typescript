@@ -52,7 +52,7 @@ RUN test "$(jq '.scripts | has("test")' package.json)" = "false" || npm test
 WORKDIR /home/app/
 
 ENV cgi_headers="true"
-ENV fprocess="npm run start"
+ENV fprocess="./start.sh"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
@@ -63,7 +63,7 @@ ENV read_timeout="15s"
 
 ENV prefix_logs="false"
 
-RUN bash build.sh
+RUN ./build.sh
 
 RUN chown -R app:app /home/app
 USER app

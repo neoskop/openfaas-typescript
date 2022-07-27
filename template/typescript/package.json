@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no tests specified\" && exit 0",
-    "start": "bash start.sh",
-    "build": "bash build.sh"
+    "start": "./start.sh",
+    "build": "./build.sh"
   },
   "keywords": [],
   "author": "OpenFaaS Ltd",
