@@ -1,5 +1,5 @@
-FROM --platform=${TARGETPLATFORM:-linux/amd64} ghcr.io/openfaas/of-watchdog:0.8.4 as watchdog
-FROM --platform=${TARGETPLATFORM:-linux/amd64} node:14-alpine as ship
+FROM --platform=${TARGETPLATFORM:-linux/amd64} ghcr.io/openfaas/of-watchdog:0.9.6 as watchdog
+FROM --platform=${TARGETPLATFORM:-linux/amd64} node:16.16.0-bullseye as ship
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
@@ -10,8 +10,7 @@ COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
 RUN npm i nodemon ts-node -g
 
-RUN apk --no-cache add curl ca-certificates bash \
-    && addgroup -S app && adduser -S -g app app
+RUN addgroup --system app && adduser --system --ingroup app app
 
 # Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
