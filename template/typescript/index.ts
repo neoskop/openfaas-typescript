@@ -8,6 +8,7 @@ const express = require("express");
 const app = express();
 const handler = require("./function/handler");
 const bodyParser = require("body-parser");
+import { isStream } from "is-stream";
 
 const defaultMaxSize = "100kb"; // body-parser default
 
@@ -116,7 +117,10 @@ const middleware = async (req, res) => {
         .send(err.toString ? err.toString() : err);
     }
 
-    if (isArray(functionResult) || isObject(functionResult)) {
+    if (isStream(functionResult)) {
+      res.set(fnContext.headers()).status(fnContext.status());
+      functionResult.pipe(res);
+    } else if (isArray(functionResult) || isObject(functionResult)) {
       res
         .set(fnContext.headers())
         .status(fnContext.status())
