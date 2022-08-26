@@ -1,11 +1,8 @@
-
-module.exports = async (event: any, context: any) => {
+export default async (event: any, context: any, _cb: any) => {
   const result = {
-    'body': JSON.stringify(event.body),
-    'content-type': event.headers["content-type"]
-  }
+    body: JSON.stringify(event.body),
+    "content-type": event.headers["content-type"],
+  };
 
-  return context
-    .status(200)
-    .succeed(result)
-}
+  return context.status(200).succeed(result);
+};

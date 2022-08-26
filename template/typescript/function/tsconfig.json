@@ -10,7 +10,7 @@
       "esModuleInterop": true,
       "paths": {},
       "lib": ["es2020", "DOM"],
-      "module": "commonjs",
+      "module": "ES6",
       "target": "es2020"
     },
     "exclude": ["node_modules"],
@@ -18,4 +18,3 @@
     "types": [ "node" ],
     "typeRoots": [ "node_modules/@types" ]
   }
-  

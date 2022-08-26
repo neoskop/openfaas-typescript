@@ -2,12 +2,10 @@
 // Copyright (c) OpenFaaS Author(s) 2021. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-"use strict";
-
-const express = require("express");
+import express from "express";
 const app = express();
-const handler = require("./function/handler");
-const bodyParser = require("body-parser");
+import handler from "./function/handler.js";
+import bodyParser from "body-parser";
 import { isStream } from "is-stream";
 
 const defaultMaxSize = "100kb"; // body-parser default
@@ -17,7 +15,7 @@ app.disable("x-powered-by");
 const rawLimit = process.env.MAX_RAW_SIZE || defaultMaxSize;
 const jsonLimit = process.env.MAX_JSON_SIZE || defaultMaxSize;
 
-app.use(function addDefaultContentType(req, res, next) {
+app.use(function addDefaultContentType(req, _res, next) {
   // When no content-type is given, the body element is set to
   // nil, and has been a source of contention for new users.
 
