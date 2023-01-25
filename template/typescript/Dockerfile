@@ -45,7 +45,7 @@ RUN npm i
 COPY function/ ./
 
 # Run any tests that may be available
-RUN apt-get update && apt-get install jq -y 
+RUN apt-get update && apt-get install jq python python3 -y 
 RUN test "$(jq '.scripts | has("test")' package.json)" = "false" || npm test
 
 # Set correct permissions to use non root user
