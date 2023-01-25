@@ -8,7 +8,7 @@ ENV DEBUG=${DEBUG}
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
-RUN npm i nodemon ts-node -g
+RUN npm i nodemon ts-node node-gyp -g
 
 RUN addgroup --system app && adduser --system --ingroup app app
 
