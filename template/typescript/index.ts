@@ -105,7 +105,7 @@ class FunctionContext {
   }
 }
 
-const middleware = async (req, res) => {
+const middleware = async (req, res: express.Response) => {
   const cb = (err, functionResult?) => {
     if (err) {
       console.error(err);
