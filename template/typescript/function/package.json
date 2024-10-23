@@ -15,7 +15,7 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@types/node": "18.18.0"
+    "@types/node": "18.19.59"
   },
   "engines": {
     "node": ">=14.16"
